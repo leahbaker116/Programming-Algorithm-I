@@ -27,32 +27,32 @@ TemperatureConverter (double Kelvin){ //This is the overloaded constructor
         return Kelvin;
     }
     
-    void SetTempFromCelsius(double Celsius){ //Accepts a Celsius value and converts it to Kelvin
-        Kelvin = Celsius + 273.15; //Makes Celsuis into Kelvin to be stored
+    void SetTempFromCelsius(double Celsius){ //Accepts a Celsius value 
+        Kelvin = Celsius + 273.15; //Celsuis to Kelvin 
     }
     
-    void SetTempFromFahrenheit(double Fahrenheit) {
-        _kelvin = ((5 * (Fahrenheit -32)/9) + 273.15);
+    void SetTempFromFahrenheit(double Fahrenheit) { //Accepts a Fahrenheit value 
+        Kelvin = ((5 * (Fahrenheit -32)/9) + 273.15); //Fahrenheit to Kelvin
     }
     
-    double GetTempAsCelsius() {
-        double Celsius = (Kelvin- 273.15);
+    double GetTempAsCelsius() { //Returns the celsius value
+        double Celsius = (Kelvin- 273.15); //Converts stored Kelvin to Celsuius
         return Celsius;
     }
     
-    double GetTempAsFahrenheit(){
-        double Fahrenheit = (((GetTempAsCelsius()*9)/5 + 32));
+    double GetTempAsFahrenheit(){ //Returns Fahrenheit value
+        double Fahrenheit = (((GetTempAsCelsius()*9)/5 + 32)); //Converts Stored Celcius value to Fahrenheit
         return Fahrenheit;
     }
     
-    void PrintTemperatures() {
-        cout<<"Temp K: "<<Kelvin<<endl;
-        cout<<"Temp C: "<<GetTempAsCelsius()<<endl;
-        cout<<"Temp F: "<<GetTempAsFahrenheit()<<endl;
+    void PrintTemperatures() { //This will print out the final stored value of all three temps
+        cout<<"Temp K: "<<Kelvin<<endl; //Kelvin
+        cout<<"Temp C: "<<GetTempAsCelsius()<<endl; //Celsuis
+        cout<<"Temp F: "<<GetTempAsFahrenheit()<<endl; //Fahrenheit 
         
     }
         
     
     private:
-        double Kelvin;
+        double Kelvin; //The only class variable 
 };
