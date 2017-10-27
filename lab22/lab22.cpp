@@ -24,7 +24,7 @@ int main()
 void RandomNumber () //This is where I give the function the steps to follow
 {
   srand(time(0));
-  int user_num = rand () % 100 + 1;
+  int user_num = rand () % 6+1;
   cout<< "Your Number is: "<<user_num<<endl;
 }
 

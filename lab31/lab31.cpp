@@ -16,7 +16,6 @@ int num_smart;
 int num_dumb;
 int num_tablet;
 int data_used;
-
     
 cout<<"To find the best phone plan for you enter your info below."<<endl;
     
@@ -32,15 +31,20 @@ cout<<"To find the best phone plan for you enter your info below."<<endl;
     cout<<"Enter estimated GB of data used per month : ";
         cin>>data_used;
 
+int total_phones = num_dumb + num_smart;
 
+    if (total_phones <= 2 && num_tablet <=2 && data_used <= 2 ){
+        cout<<"ATT 1 GB Family Plan or Sprint 2GB Plan"<<endl;
+    };
+    if (total_phones <= 3 && num_tablet <= 3 && data_used <= 3){
+        cout<<"ATT 3GB Family Plan"<<endl;
+    };
+    if (total_phones <= 3 && num_tablet <= 3 && data_used <= 6){
+        cout<<"ATT 6GB Family Plan"<<endl;
+    };
+    if (total_phones <= 3 && num_tablet <= 3 && data_used <= 10){
+        cout<<"ATT Unlimited Plan, Choice for fastest data, Plus for slower data"<<endl;
+    };
    
-    if (num_smart <= 1 && num_dumb <= 1 && num_tablet <= 1 && data_used <= 1){
-        cout<<"ATT 1GB Family Plan";
-    }
-    if else (num_smart <=3 && num_dumb <=3 && num_tablet <= 3 && data_used <= 5){
-        cout<<"ATT 6GB family Plan"
-    }
-    
-    if else ()
 }
 
