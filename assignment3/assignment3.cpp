@@ -51,36 +51,34 @@ class ComputerPlay{
 };
 
 int main (){
-
-ComputerPlay play1;
-play1.setComputerScore();
     char user_start;
     int user_turn = 0;
     int user_score = 0;
     int score_limit = 100;
    
-cout<<"Enter r to roll or q to quit ";
+cout<<"Enter r to start or q to quit ";
 cin>>user_start;
 
-while (user_score < score_limit && play1.setComputerScore() < score_limit) {
+DiceRoll();
     
-    while (user_start == 'r'){
+    while (DiceRoll() != 1){
         
-        DiceRoll();
-            if (DiceRoll() != 1){
+        cout<<"Enter r to roll or q to quit ";
+            cin>>user_start;
+            
+            if (user_start == 'r'){
                 cout<<"Your roll is: "<<DiceRoll()<<endl;
-            user_turn = user_turn + DiceRoll();  
+                user_turn = user_turn + DiceRoll();  
                 cout<<"Your score in this round is: "<<user_turn<<endl;
                
-            user_score = user_score + user_turn;
+            user_score = user_turn + user_score;
             }
-    
-            else if (user_start == 'q'){
-                cout<<"Your score is: "<<user_score<<endl;
+            else {
+                cout<<"You quit your turn, your score is: "<<user_score<<endl;
             }
-            }
- 
-    
-}
+        }
+    if (DiceRoll() == 1){
+        user_turn = 0;
+        cout<<"You rolled a one, no points this round"<<endl;}
 
 }
